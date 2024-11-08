@@ -7,6 +7,7 @@
 
 source $HOME/.bash/prompt.sh
 source $HOME/.bash/git.sh
+source $HOME/.bash/sshagent.sh
 
 EDITOR=/usr/bin/vim
 alias ls='ls --color=auto'
