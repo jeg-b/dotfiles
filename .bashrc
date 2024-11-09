@@ -15,6 +15,7 @@ alias grep='grep --color=auto'
 alias la='ls -la'
 alias sudo='sudo '
 
+
 ### history settings 
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -33,6 +34,10 @@ if [ -f /usr/share/nnn/quitcd/quitcd.bash_zsh ]; then
 fi
 
 ### debian-like autocomplete
+
+bind 'set show-all-if-ambiguous on'
+bind 'set completion-ignore-case on'
+bind 'TAB:menu-complete'
 
 if ! shopt -oq posix; then
 	if [ -f /usr/share/bash_completion/bash_completion ]; then
