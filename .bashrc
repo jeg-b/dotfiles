@@ -13,6 +13,7 @@ EDITOR=/usr/bin/vim
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias la='ls -la'
+alias sudo='sudo '
 
 ### history settings 
 
