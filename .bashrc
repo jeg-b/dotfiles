@@ -12,7 +12,7 @@ source $HOME/.bash/sshagent.sh
 EDITOR=/usr/bin/vim
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias ls='ls -la'
+alias la='ls -la'
 
 ### history settings 
 
