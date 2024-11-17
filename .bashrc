@@ -56,9 +56,11 @@ else
 fi
 
 if [ "$color_prompt" = yes ]; then
-    set_prompt
+	trap 'timer_start' DEBUG
+	set_prompt
+	PROMPT_COMMAND=timer_stop
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+	PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt
 
@@ -66,10 +68,10 @@ unset color_prompt
 
 # if bash is launched from xterm set window name
 case "$TERM" in
-    xterm*|rxvt*|st*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
+	xterm*|rxvt*|st*)
+	PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+	;;
 *)
-    ;;
+	;;
 esac
 

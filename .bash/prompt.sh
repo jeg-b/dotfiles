@@ -17,13 +17,13 @@ function format_time {
     local m=$(((delta_us / 60000000) % 60))
     local h=$((delta_us / 360000000))
 
-    if ((h > 0)); then execution_time=${h}h ${m}m
-    elif ((m > 0)); then execution_time=${m}m ${s}s
-    elif ((s >= 10)); then execution_time=${s}.$((ms / 100))s
-    elif ((s > 0)); then execution_time=${s}.$(printf '%.3d' "$ms")s
-    elif ((ms >= 100)); then execution_time=${ms}ms
-    elif ((ms > 0)); then execution_time=${ms}.$(printf '%.3d' "$us")ms
-    else execution_time=${us}us
+    if ((h > 0)); then execution_time="${h}h ${m}m"
+    elif ((m > 0)); then execution_time="${m}m ${s}s"
+    elif ((s >= 10)); then execution_time="${s}.$((ms / 100))s"
+    elif ((s > 0)); then execution_time="${s}.$(printf '%.3d' "${ms}")s"
+    elif ((ms >= 100)); then execution_time="${ms}ms"
+    elif ((ms > 0)); then execution_time="${ms}.$(printf '%.3d' "${us}")ms"
+    else execution_time="${us}us"
     fi
 }
 
@@ -53,6 +53,7 @@ function exit_status {
         echo -e "$cred$iconx${creset}EC: $1"
     fi
     unset cgreen cred creset iconx iconcheckmark
+    set_prompt
 }
 
 function set_prompt() {
