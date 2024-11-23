@@ -1,7 +1,7 @@
 #!/bin/sh
 
-userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
+userresources=$HOME/.config/X11/.Xresources
+usermodmap=$HOME/.config/X11/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
@@ -35,6 +35,12 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  done
  unset f
 fi
+
+xset +fp /usr/share/fonts/local
+setxkbmap de
+picom -b
+$HOME/.config/X11/default_screenlayout.sh
+$Home/.config/fehbg.sh &
 
 while xsetroot -name "`date` `uptime | sed 's/.*,//'`"
 do
