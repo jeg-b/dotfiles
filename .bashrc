@@ -3,7 +3,9 @@
 #
 
 # If not running interactively, don't do anything
-[[ "${-#*i}" == *$-* ]] && return
+if [ "${-#*i}" == *$-* ]; then
+	return
+fi
 
 source $HOME/.bash/prompt.sh
 source $HOME/.bash/git.sh
