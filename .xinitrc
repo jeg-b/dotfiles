@@ -38,7 +38,7 @@ fi
 
 xset +fp /usr/share/fonts/local
 setxkbmap de
-picom -b
+picom -b --config "$HOME/.config/X11/picom.conf"
 $HOME/.config/X11/default_screenlayout.sh
 $Home/.config/fehbg.sh &
 
