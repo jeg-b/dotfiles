@@ -1,6 +1,8 @@
 filetype plugin on
 syntax on
 filetype indent on
+set number
+set relativenumber
 set clipboard=unnamedplus
 set smarttab
 set autoindent
