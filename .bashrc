@@ -20,7 +20,9 @@ alias xc='xclip -selection clipboard'
 alias steam='PROTON_USE_WINE3D=1 flatpak run com.valvesoftware.Steam &>/dev/null &'
 function bwu () { bw get username "$1" | xc ; }
 function bwp () { bw get password "$1" | xc ; }
+function bwt () { bw get totp "$1" | xc ; }
 function bwi () { bw get item "$1" | jq ; }
+function bws () { bw list items --search "$1" ; }
 ### history settings 
 
 # don't put duplicate lines or lines starting with space in the history.
