@@ -16,8 +16,11 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias la='ls -la'
 alias sudo='sudo '
-
-
+alias xc='xclip -selection clipboard'
+alias steam='PROTON_USE_WINE3D=1 flatpak run com.valvesoftware.Steam &>/dev/null &'
+function bwu () { bw get username "$1" | xc ; }
+function bwp () { bw get password "$1" | xc ; }
+function bwi () { bw get item "$1" | jq ; }
 ### history settings 
 
 # don't put duplicate lines or lines starting with space in the history.
